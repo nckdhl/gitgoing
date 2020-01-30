@@ -1,0 +1,27 @@
+{
+  "name": "gitstarted",
+  "version": "1.0.0",
+  "description": "Interactive tool to automate necessary repo init. steps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git node cli workflow"
+  },
+  "author": "Nick Dahl",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/rest": "^16.40.1",
+    "chalk": "^3.0.0",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^5.0.0",
+    "figlet": "^1.2.4",
+    "inquirer": "^7.0.4",
+    "lodash": "^4.17.15",
+    "minimist": "^1.2.0",
+    "simple-git": "^1.131.0"
+  }
+}
