@@ -4,7 +4,8 @@
   "description": "Interactive tool to automate necessary repo init. steps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js init && node index.js octocheck && node index.js create"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "inquirer": "^7.0.4",
     "lodash": "^4.17.15",
     "minimist": "^1.2.0",
+    "open": "^7.0.1",
     "simple-git": "^1.131.0",
     "touch": "^3.1.0"
   }

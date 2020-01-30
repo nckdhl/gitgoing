@@ -14,7 +14,10 @@ gitstarted
     .description('Draw app banner')
     .action(() => {
         clear();
-        console.log(chalk.magenta(figlet.textSync('gitstarted', { horizontalLayout: 'full' })));
+        console.log(chalk.magenta(figlet.textSync('gitstarted', { 
+            horizontalLayout: 'full',
+            font: "Moscow" 
+        })));
     });
 
 gitstarted
