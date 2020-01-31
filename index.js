@@ -26,17 +26,17 @@ gitstarted
     );
   });
 
-gitstarted
-  .command("octocheck")
-  .description("Check user GitHub credentials")
-  .action(async () => {
-    let token = github.getStoredGitHubToken(); // check if token is already stored
-    if (!token) {
-      // if there is no stored token
-      token = await github.retrieveTokenManually(); // authorize with GitHub, register token in conf file
-    }
-    console.log(token);
-  });
+// gitstarted
+//   .command("octocheck")
+//   .description("Check user GitHub credentials")
+//   .action(async () => {
+//     let token = github.getStoredGitHubToken(); // check if token is already stored
+//     if (!token) {
+//       // if there is no stored token
+//       token = await github.retrieveTokenManually(); // authorize with GitHub, register token in conf file
+//     }
+//     console.log(token);
+//   });
 
 gitstarted
   .command("create")
@@ -45,18 +45,17 @@ gitstarted
     const getGitHubToken = async () => {
       let token = github.getStoredGitHubToken();
       if (token) {
+        await github.instantiateOctokit(token);
         return token;
       }
 
-      await github.setGitHubCredentials();
-
-      token = await github.registerNewToken();
+      token = await github.setGitHubCredentials();
+      console.log(token);
 
       return token;
     };
     try {
       const token = await getGitHubToken();
-      github.gitHubAuth(token);
 
       const url = await repo.createRemoteRepository();
 
@@ -69,6 +68,7 @@ gitstarted
       }
     } catch (error) {
       if (error) {
+        console.log(error);
         switch (error.status) {
           case 401:
             console.log(chalk.red("Couldn't log you in."));
