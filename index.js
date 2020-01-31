@@ -26,17 +26,6 @@ gitstarted
     );
   });
 
-// gitstarted
-//   .command("octocheck")
-//   .description("Check user GitHub credentials")
-//   .action(async () => {
-//     let token = github.getStoredGitHubToken(); // check if token is already stored
-//     if (!token) {
-//       // if there is no stored token
-//       token = await github.retrieveTokenManually(); // authorize with GitHub, register token in conf file
-//     }
-//     console.log(token);
-//   });
 
 gitstarted
   .command("create")
