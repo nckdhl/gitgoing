@@ -3,16 +3,12 @@
   "version": "0.0.1",
   "description": "Interactive tool to automate necessary repo init. steps",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git node cli workflow"
   },
   "author": "Nick Dahl",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "gitstarted": "./index.js"
   },
