@@ -24,6 +24,8 @@ gitstarted
         })
       )
     );
+    console.log(chalk.green("The interactive tool to automate tedious repo initialization steps"));
+    files.isGitRepository();
   });
 
 
