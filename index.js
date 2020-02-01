@@ -3,7 +3,6 @@ const chalk = require("chalk"); // applies ANSI colors and styles
 const figlet = require("figlet"); // creates large letters with text
 const clear = require("clear"); // removes current output in the console
 const meow = require("meow"); // cli tool
-const ora = require("ora"); // spinner
 
 const files = require("./lib/files");
 const github = require("./lib/github_credentials");
@@ -27,24 +26,12 @@ ${chalk.magenta(
       Warning
         - gitstarted will terminate if a git repository is already found in the cwd
     
-`,
-  {
-    flags: {
-      yes: {
-        type: "boolean",
-        alias: "y",
-        default: false
-      }
-    }
-  }
-);
-
-
-
+`);
 
 createRepo();
 
 async function createRepo() {
+  clear();
   console.log(cli.help);
   const confirmed = await inquirer.proceed();
 
@@ -52,7 +39,7 @@ async function createRepo() {
 
   if (confirmed.proceed) {
 
-    files.isGitRepository();
+    //files.isGitRepository();
     
     const getGitHubToken = async () => {
       let token = github.getStoredGitHubToken();
@@ -62,8 +49,6 @@ async function createRepo() {
       }
 
       token = await github.setGitHubCredentials();
-      console.log(token);
-
       return token;
     };
     try {
