@@ -1,5 +1,5 @@
 {
-  "name": "gitstarted",
+  "name": "gitgoing",
   "version": "0.0.1",
   "description": "Interactive tool to automate necessary repo init. steps",
   "main": "index.js",
@@ -7,10 +7,13 @@
     "type": "git",
     "url": "git node cli workflow"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "Nick Dahl",
   "license": "MIT",
   "bin": {
-    "gitstarted": "./index.js"
+    "gitgoing": "./index.js"
   },
   "dependencies": {
     "@octokit/auth-basic": "^1.3.0",

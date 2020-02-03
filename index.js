@@ -13,18 +13,18 @@ const repo = require("./lib/create_a_repo");
 const cli = meow(
   `
 ${chalk.magenta(
-  figlet.textSync("gitstarted", { horizontalLayout: "full", font: "Roman" })
+  figlet.textSync("gitgoing", { horizontalLayout: "full", font: "Roman" })
 )}
 
-      ${chalk.green(
-        "The interactive tool to automate tedious repo initialization steps"
-      )}
+  ${chalk.green(
+    "The interactive tool to automate tedious repo initialization steps"
+  )}
 
-      Usage
-        $ npx gitstarted # brings up full figlet & prompt before proceeding
+  Usage
+    $ npx gitgoing # brings up full figlet & prompt before proceeding
 
-      Warning
-        - gitstarted will terminate if a git repository is already found in the cwd
+  Warning
+    - gitgoing will terminate if a git repository is already found in the cwd
     
 `);
 
